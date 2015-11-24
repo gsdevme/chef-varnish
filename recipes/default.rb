@@ -94,8 +94,10 @@ service 'varnish' do
   action [ :enable, :start ]
 end
 
-service 'varnishlog' do
-  supports :restart => true, :reload => true
-  action [ :enable, :start ]
+if node['varnishlog']['enabled']
+    service 'varnishlog' do
+      supports :restart => true, :reload => true
+      action [ :enable, :start ]
+    end
 end
 

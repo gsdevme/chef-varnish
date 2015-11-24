@@ -32,3 +32,5 @@ end
 
 default['varnish']['release_baseurl'] = "http://repo.varnish-cache.org/redhat/varnish-#{node['varnish']['version']}/el#{node['varnish']['release_elversion']}/$basearch/"
 default['varnish']['custom_parameters'] = {}
+
+default['varnishlog']['enabled'] = true
